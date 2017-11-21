@@ -14,10 +14,17 @@ router.get('/', (req, res, next) => {
     const restaurants = Restaurant.findAll({ include: [{ all: true }] })
     const activities = Activity.findAll({ include: [{ all: true }] })
 
-    Promise.all([places, hotels, restaurants, activities])
+    Promise.all([hotels, restaurants, activities])
     .then(arr => {
-        var result = [];
-        arr.forEach(element => result.push(element));
-        res.json(result);
+
+        res.json({
+            "hotels": arr[0],
+            "restaurants": arr[1],
+            "activities": arr[2]
+        })
+
+        // var result = [];
+        // arr.forEach(element => result.push(element));
+        // res.json(result);
     })
 });
