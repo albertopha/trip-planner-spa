@@ -10,9 +10,9 @@ module.exports = router;
 
 router.get('/', (req, res, next) => {
     const places = Place.findAll({})
-    const hotels = Hotel.findAll({})
-    const restaurants = Restaurant.findAll({})
-    const activities = Activity.findAll({})
+    const hotels = Hotel.findAll({ include: [{ all: true }] })
+    const restaurants = Restaurant.findAll({ include: [{ all: true }] })
+    const activities = Activity.findAll({ include: [{ all: true }] })
 
     Promise.all([places, hotels, restaurants, activities])
     .then(arr => {
