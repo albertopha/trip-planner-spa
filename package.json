@@ -1,0 +1,27 @@
+{
+  "name": "trip-planner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "webpack -w & nodemon server/app.js",
+    "start": "npm run start:dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mapbox-gl": "^0.40.1",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
+    "pg": "^7.4.0",
+    "sequelize": "^4.22.11"
+  }
+}
