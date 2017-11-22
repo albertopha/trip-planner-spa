@@ -6,7 +6,6 @@ const Hotel = db.Hotel;
 const Restaurant = db.Restaurant;
 const Activity = db.Activity;
 
-module.exports = router;
 
 router.get('/', (req, res, next) => {
     const hotels = Hotel.findAll({ include: [{ all: true }] })
@@ -22,3 +21,6 @@ router.get('/', (req, res, next) => {
         })
     })
 });
+
+
+module.exports = router;
